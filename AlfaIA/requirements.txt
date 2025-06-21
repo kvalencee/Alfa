@@ -1,0 +1,112 @@
+# AlfaIA - Dependencias del Proyecto
+# Aplicación Educativa de Escritorio con PyQt6 y NLP
+
+# ============================================================================
+# FRAMEWORK PRINCIPAL
+# ============================================================================
+PyQt6>=6.6.0
+PyQt6-Qt6>=6.6.0
+
+# ============================================================================
+# BASE DE DATOS
+# ============================================================================
+mysql-connector-python>=8.2.0
+PyMySQL>=1.1.0
+
+# ============================================================================
+# PROCESAMIENTO DE LENGUAJE NATURAL (NLP)
+# ============================================================================
+# spaCy - Análisis morfológico, sintáctico y semántico
+spacy>=3.7.0
+# Modelo en español (se descarga por separado con: python -m spacy download es_core_news_sm)
+
+# Language Tool - Corrección gramatical y ortográfica
+language-tool-python>=2.7.1
+
+# NLTK - Procesamiento adicional de texto
+nltk>=3.8.1
+
+# TextBlob - Análisis de sentimientos y corrección básica
+textblob>=0.17.1
+
+# Transformers (Hugging Face) - Modelos de lenguaje pre-entrenados
+transformers>=4.35.0
+torch>=2.1.0
+
+# ============================================================================
+# ANÁLISIS DE DATOS Y MACHINE LEARNING
+# ============================================================================
+scikit-learn>=1.3.0
+pandas>=2.1.0
+numpy>=1.24.0
+
+# ============================================================================
+# VISUALIZACIÓN
+# ============================================================================
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# ============================================================================
+# SEGURIDAD Y UTILIDADES
+# ============================================================================
+bcrypt>=4.0.1
+cryptography>=41.0.0
+requests>=2.31.0
+python-dateutil>=2.8.2
+
+# ============================================================================
+# UTILIDADES ADICIONALES
+# ============================================================================
+# Logging mejorado
+colorlog>=6.7.0
+
+# Validación de datos
+pydantic>=2.4.0
+
+# Configuración desde archivos
+python-dotenv>=1.0.0
+
+# Manejo de archivos JSON/YAML
+PyYAML>=6.0.1
+
+# Testing
+pytest>=7.4.0
+pytest-qt>=4.2.0
+pytest-cov>=4.1.0
+
+# ============================================================================
+# DESARROLLO Y DEBUGGING
+# ============================================================================
+# Código más limpio
+black>=23.9.0
+flake8>=6.1.0
+isort>=5.12.0
+
+# Documentación
+sphinx>=7.2.0
+sphinx-rtd-theme>=1.3.0
+
+# ============================================================================
+# EMPAQUETADO Y DISTRIBUCIÓN
+# ============================================================================
+PyInstaller>=6.1.0
+setuptools>=68.2.0
+wheel>=0.41.0
+
+# ============================================================================
+# VERSIONES MÍNIMAS COMPATIBLES
+# ============================================================================
+# Python >= 3.9 (especificado en las especificaciones técnicas)
+# PyQt6 requiere Python >= 3.8
+# spaCy requiere Python >= 3.8
+# transformers requiere Python >= 3.8
+
+# ============================================================================
+# NOTAS DE INSTALACIÓN
+# ============================================================================
+# 1. Instalar requirements: pip install -r requirements.txt
+# 2. Descargar modelo de spaCy: python -m spacy download es_core_news_sm
+# 3. Descargar datos de NLTK:
+#    python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+# 4. Para development: pip install -r requirements.txt[dev]
