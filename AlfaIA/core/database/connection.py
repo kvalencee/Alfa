@@ -1,5 +1,5 @@
 # =============================================================================
-# AlfaIA/core/database/connection.py - Gestor de Conexión a MySQL
+# AlfaIA/core/database/connection.py - Gestor de Conexión a MySQL (CORREGIDO)
 # =============================================================================
 
 import mysql.connector
@@ -34,11 +34,29 @@ class DatabaseManager:
             self.config = DatabaseConfig()
             self.initialized = True
 
+    def ensure_database_exists(self) -> bool:
+        """Asegurar que la base de datos existe"""
+        try:
+            return self.config.create_database_if_not_exists()
+        except Exception as e:
+            self.logger.error(f"Error asegurando que existe la BD: {e}")
+            return False
+
     def create_connection_pool(self) -> bool:
         """Crear pool de conexiones a MySQL"""
         try:
+            if not self.ensure_database_exists():
+                self.logger.error("No se pudo crear o verificar la base de datos")
+                return False
+
             pool_config = self.config.get_connection_dict()
-            pool_config.update(self.config.POOL_CONFIG)
+            safe_pool_config = {
+                "pool_name": "alfaia_pool",
+                "pool_size": 10,
+                "pool_reset_session": True
+            }
+
+            pool_config.update(safe_pool_config)
 
             self._pool = pooling.MySQLConnectionPool(**pool_config)
             self.logger.info("Pool de conexiones creado exitosamente")
@@ -125,7 +143,6 @@ class DatabaseManager:
     def create_database_schema(self) -> bool:
         """Crear esquema completo de la base de datos"""
         try:
-            # SQL para crear todas las tablas según especificaciones
             tables_sql = {
                 "usuarios": """
                             CREATE TABLE IF NOT EXISTS usuarios
@@ -239,26 +256,25 @@ class DatabaseManager:
                                          """
             }
 
-            # Crear tablas
             for table_name, sql in tables_sql.items():
                 if self.execute_non_query(sql):
                     self.logger.info(f"Tabla {table_name} creada/verificada exitosamente")
+                    print(f"✅ Tabla {table_name} creada/verificada")
                 else:
                     self.logger.error(f"Error creando tabla {table_name}")
+                    print(f"❌ Error creando tabla {table_name}")
                     return False
 
-            # Insertar datos iniciales si es necesario
             self._insert_initial_data()
-
             return True
 
         except Exception as e:
             self.logger.error(f"Error creando esquema de BD: {e}")
+            print(f"❌ Error creando esquema: {e}")
             return False
 
     def _insert_initial_data(self) -> None:
         """Insertar datos iniciales en la base de datos"""
-        # Categorías iniciales
         categorias_iniciales = [
             ("Gramática Básica", "Ejercicios de gramática fundamental", "grammar", "#4A90E2", 1, 5),
             ("Vocabulario", "Ampliación de vocabulario", "vocabulary", "#7ED321", 1, 10),
@@ -269,174 +285,25 @@ class DatabaseManager:
         for categoria in categorias_iniciales:
             query = """
                     INSERT IGNORE INTO categorias (nombre, descripcion, icono, color_hex, nivel_minimo, nivel_maximo)
-                    VALUES (%s, %s, %s, %s, %s, %s) \
+                    VALUES (%s, %s, %s, %s, %s, %s)
                     """
-            self.execute_non_query(query, categoria)
-
-
-# =============================================================================
-# AlfaIA/main.py - Punto de Entrada Principal
-# =============================================================================
-
-import sys
-import logging
-from pathlib import Path
-from PyQt6.QtWidgets import QApplication, QMessageBox
-from PyQt6.QtCore import QTranslator, QLocale
-from PyQt6.QtGui import QIcon
-
-# Configurar logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('alfaia.log'),
-        logging.StreamHandler()
-    ]
-)
-
-# Importar configuración y componentes
-from config import settings, db_config
-from core.database.connection import DatabaseManager
-from ui.windows.main_window import MainWindow
-
-
-class AlfaIAApplication:
-    """Clase principal de la aplicación AlfaIA"""
-
-    def __init__(self):
-        self.app = None
-        self.main_window = None
-        self.db_manager = None
-        self.logger = logging.getLogger(__name__)
-
-    def initialize_database(self) -> bool:
-        """Inicializar conexión y esquema de base de datos"""
-        try:
-            self.db_manager = DatabaseManager()
-
-            # Probar conexión
-            if not self.db_manager.test_connection():
-                self.show_database_error("No se pudo conectar a la base de datos MySQL.")
-                return False
-
-            # Crear esquema si no existe
-            if not self.db_manager.create_database_schema():
-                self.show_database_error("Error creando esquema de base de datos.")
-                return False
-
-            self.logger.info("Base de datos inicializada correctamente")
-            return True
-
-        except Exception as e:
-            self.logger.error(f"Error inicializando BD: {e}")
-            self.show_database_error(f"Error de base de datos: {str(e)}")
-            return False
-
-    def show_database_error(self, message: str) -> None:
-        """Mostrar error de base de datos al usuario"""
-        if self.app:
-            QMessageBox.critical(None, "Error de Base de Datos", message)
-        else:
-            print(f"ERROR BD: {message}")
-
-    def initialize_app(self) -> bool:
-        """Inicializar aplicación PyQt6"""
-        try:
-            self.app = QApplication(sys.argv)
-            self.app.setApplicationName(settings.APP_NAME)
-            self.app.setApplicationVersion(settings.APP_VERSION)
-
-            # Configurar icono de la aplicación
-            # icon_path = settings.RESOURCES_DIR / "icon.png"
-            # if icon_path.exists():
-            #     self.app.setWindowIcon(QIcon(str(icon_path)))
-
-            self.logger.info("Aplicación PyQt6 inicializada")
-            return True
-
-        except Exception as e:
-            self.logger.error(f"Error inicializando aplicación: {e}")
-            return False
-
-    def show_main_window(self):
-        """Mostrar ventana principal después del login exitoso"""
-        try:
-            from ui.windows.main_window import MainWindow
-            self.main_window = MainWindow()
-            self.main_window.show()
-
-            # Cerrar ventana de login
-            if hasattr(self, 'login_window'):
-                self.login_window.close()
-
-        except Exception as e:
-            self.logger.error(f"Error mostrando ventana principal: {e}")
-
-    def run(self) -> int:
-        """Ejecutar la aplicación principal"""
-        try:
-            # Inicializar aplicación
-            if not self.initialize_app():
-                return 1
-
-            # Inicializar base de datos
-            if not self.initialize_database():
-                return 1
-
-            # Mostrar ventana de login primero
-            from ui.windows.login_window import LoginWindow
-            self.login_window = LoginWindow()
-            self.login_window.login_successful.connect(self.show_main_window)
-            self.login_window.show()
-
-            self.logger.info("AlfaIA iniciado exitosamente")
-
-            # Ejecutar loop de eventos
-            return self.app.exec()
-
-        except Exception as e:
-            self.logger.error(f"Error ejecutando aplicación: {e}")
-            return 1
-
-    def cleanup(self) -> None:
-        """Limpiar recursos antes de cerrar"""
-        try:
-            if self.main_window:
-                self.main_window.close()
-
-            if self.db_manager and self.db_manager._pool:
-                # Cerrar pool de conexiones si existe
-                pass
-
-            self.logger.info("Recursos limpiados correctamente")
-
-        except Exception as e:
-            self.logger.error(f"Error en cleanup: {e}")
-
-
-def main():
-    """Función principal de entrada"""
-    app = AlfaIAApplication()
-
-    try:
-        # Ejecutar aplicación
-        exit_code = app.run()
-
-    except KeyboardInterrupt:
-        print("\n⚠️  Aplicación interrumpida por el usuario")
-        exit_code = 0
-
-    except Exception as e:
-        print(f"❌ Error fatal: {e}")
-        exit_code = 1
-
-    finally:
-        # Limpiar recursos
-        app.cleanup()
-
-    sys.exit(exit_code)
+            if self.execute_non_query(query, categoria):
+                print(f"✅ Categoría '{categoria[0]}' insertada/verificada")
 
 
 if __name__ == "__main__":
-    main()
+    print("🔧 Configurando base de datos AlfaIA...")
+
+    db_manager = DatabaseManager()
+
+    print("📡 Probando conexión...")
+    if db_manager.test_connection():
+        print("✅ Conexión exitosa")
+    else:
+        print("❌ Error de conexión")
+
+    print("🏗️  Creando esquema...")
+    if db_manager.create_database_schema():
+        print("✅ Esquema creado exitosamente")
+    else:
+        print("❌ Error creando esquema")

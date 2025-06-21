@@ -1,3 +1,42 @@
 2025-06-21 15:00:03,781 - __main__ - INFO - Aplicación PyQt6 inicializada
 2025-06-21 15:00:03,781 - core.database.connection - ERROR - Error creando pool de conexiones: Connection configuration not valid: Unsupported argument 'read_timeout'
 2025-06-21 15:00:11,294 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 16:59:04,148 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 16:59:04,262 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 16:59:04,262 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 16:59:04,262 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 16:59:04,824 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 16:59:04,858 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 16:59:04,875 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 16:59:04,889 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 16:59:04,906 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 16:59:04,922 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 16:59:04,936 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 16:59:04,952 - __main__ - ERROR - Error ejecutando aplicación: unterminated string literal (detected at line 333) (authentication.py, line 333)
+2025-06-21 16:59:04,952 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:00:39,452 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:00:39,541 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:00:39,541 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:00:39,541 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:00:40,043 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:00:40,049 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:00:40,052 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:00:40,054 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:00:40,059 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:00:40,062 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:00:40,073 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:00:40,083 - __main__ - ERROR - Error ejecutando aplicación: cannot import name 'Usuario' from 'core.database.models' (C:\Users\Kevin Valencia\Documents\ESCOM\ADS\AlfaIA\AlfaIA\core\database\models.py)
+2025-06-21 17:00:40,083 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:02:20,379 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:02:20,452 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:02:20,452 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:02:20,452 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:02:21,005 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:02:21,009 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:02:21,011 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:02:21,013 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:02:21,016 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:02:21,019 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:02:21,038 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:02:21,044 - __main__ - ERROR - Error ejecutando aplicación: cannot import name 'Usuario' from 'core.database.models' (C:\Users\Kevin Valencia\Documents\ESCOM\ADS\AlfaIA\AlfaIA\core\database\models.py)
+2025-06-21 17:02:21,045 - __main__ - INFO - Recursos limpiados correctamente
