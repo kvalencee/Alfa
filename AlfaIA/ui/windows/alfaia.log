@@ -1,0 +1,3 @@
+2025-06-21 16:47:14,034 - core.database.connection - ERROR - Error creando pool de conexiones: Connection configuration not valid: Unsupported argument 'read_timeout'
+2025-06-21 16:47:19,037 - core.database.connection - ERROR - Error creando pool de conexiones: Connection configuration not valid: Unsupported argument 'read_timeout'
+2025-06-21 16:47:24,048 - core.database.connection - ERROR - Error creando pool de conexiones: Connection configuration not valid: Unsupported argument 'read_timeout'
