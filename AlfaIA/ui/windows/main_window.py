@@ -1,5 +1,5 @@
 # =============================================================================
-# AlfaIA/ui/windows/main_window.py - Ventana Principal Corregida y Completa
+# AlfaIA/ui/windows/main_window.py - Ventana Principal COMPLETA Y CORREGIDA
 # =============================================================================
 
 import sys
@@ -18,14 +18,13 @@ from PyQt6.QtGui import QFont, QColor, QPalette, QIcon, QAction
 # Agregar path para imports
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
+# IMPORTS SEGUROS CON FALLBACKS
 try:
     from config.settings import Settings
-    from core.auth.authentication import auth_manager
-    from core.database.models import PerfilUsuario
 
-    print("✅ Imports de MainWindow exitosos")
+    print("✅ Settings importado correctamente")
 except ImportError as e:
-    print(f"⚠️ Error en imports de MainWindow: {e}")
+    print(f"⚠️ Error importando Settings: {e}")
 
 
     class Settings:
@@ -42,106 +41,136 @@ except ImportError as e:
             'white_pure': '#FFFFFF'
         }
 
+try:
+    from core.auth.authentication import auth_manager
 
-class UserDataManager:
-    """Gestor de datos del usuario para MainWindow"""
+    print("✅ auth_manager importado correctamente")
+except ImportError as e:
+    print(f"⚠️ Error importando auth_manager: {e}")
+
+
+    # Crear auth_manager dummy
+    class DummyAuthManager:
+        def logout(self):
+            pass
+
+        def get_current_user(self):
+            return None
+
+
+    auth_manager = DummyAuthManager()
+
+try:
+    from core.utils.user_data_manager import UserDataManager as ImportedUserDataManager
+
+    print("✅ UserDataManager importado correctamente")
+    USE_IMPORTED_MANAGER = True
+except ImportError as e:
+    print(f"⚠️ Error importando UserDataManager: {e}")
+    USE_IMPORTED_MANAGER = False
+
+
+class SafeUserDataManager:
+    """UserDataManager seguro con fallbacks"""
 
     def __init__(self, user):
         self.user = user
-        self.profile = None
-        print(f"🔧 Inicializando UserDataManager para: {type(user)}")
+        print(f"🔧 Creando SafeUserDataManager para: {type(user).__name__}")
 
-        # Validar usuario antes de continuar
-        if not self._validate_user():
-            print("⚠️ Usuario inválido, usando datos por defecto")
-            return
-
-        # Cargar perfil de forma segura
-        self._safe_load_profile()
-
-    def _validate_user(self):
-        """Validar que el objeto usuario tenga los atributos mínimos"""
-        if not self.user:
-            return False
-
-        required_attrs = ['nombre', 'email']
-        for attr in required_attrs:
-            if not hasattr(self.user, attr):
-                print(f"❌ Usuario falta atributo: {attr}")
-                return False
-
-        return True
-
-    def _safe_load_profile(self):
-        """Cargar perfil de forma segura"""
-        try:
-            if hasattr(self.user, 'id') and self.user.id:
-                print(f"🔍 Cargando perfil para user_id: {self.user.id}")
-                self.profile = PerfilUsuario.find_by_user_id(self.user.id)
-                if self.profile:
-                    print("✅ Perfil cargado desde BD")
-                else:
-                    print("⚠️ No se encontró perfil, usando valores por defecto")
-        except Exception as e:
-            print(f"❌ Error cargando perfil: {e}")
-            self.profile = None
+        # Usar el importado si está disponible, sino usar fallback
+        if USE_IMPORTED_MANAGER:
+            try:
+                self.manager = ImportedUserDataManager(user)
+            except Exception as e:
+                print(f"❌ Error creando UserDataManager importado: {e}")
+                self.manager = None
+        else:
+            self.manager = None
 
     def get_display_name(self):
-        """Nombre completo para mostrar"""
+        if self.manager:
+            try:
+                return self.manager.get_display_name()
+            except:
+                pass
+        # Fallback
         if hasattr(self.user, 'nombre') and hasattr(self.user, 'apellido'):
             return f"{self.user.nombre} {self.user.apellido}"
-        return "Usuario"
+        return "Usuario Demo"
 
     def get_first_name(self):
-        """Solo el nombre"""
+        if self.manager:
+            try:
+                return self.manager.get_first_name()
+            except:
+                pass
+        # Fallback
         if hasattr(self.user, 'nombre'):
             return self.user.nombre
         return "Usuario"
 
     def get_email(self):
-        """Email del usuario"""
+        if self.manager:
+            try:
+                return self.manager.get_email()
+            except:
+                pass
+        # Fallback
         if hasattr(self.user, 'email'):
             return self.user.email
         return "demo@alfaia.com"
 
     def get_level(self):
-        """Nivel actual del usuario"""
-        if self.profile and hasattr(self.profile, 'nivel_lectura'):
-            return f"Nivel {self.profile.nivel_lectura}"
-        elif hasattr(self.user, 'nivel_inicial'):
+        if self.manager:
+            try:
+                return self.manager.get_level()
+            except:
+                pass
+        # Fallback
+        if hasattr(self.user, 'nivel_inicial'):
             if hasattr(self.user.nivel_inicial, 'value'):
                 return self.user.nivel_inicial.value
             return str(self.user.nivel_inicial)
         return "Principiante"
 
     def get_daily_goal(self):
-        """Meta diaria de ejercicios"""
-        if self.profile and hasattr(self.profile, 'objetivo_diario_ejercicios'):
-            return self.profile.objetivo_diario_ejercicios
+        if self.manager:
+            try:
+                return self.manager.get_daily_goal()
+            except:
+                pass
         return 5
 
     def get_total_points(self):
-        """Puntos totales"""
-        if self.profile and hasattr(self.profile, 'puntos_totales'):
-            return self.profile.puntos_totales
+        if self.manager:
+            try:
+                return self.manager.get_total_points()
+            except:
+                pass
         return 0
 
     def get_streak(self):
-        """Racha de días consecutivos"""
-        if self.profile and hasattr(self.profile, 'racha_dias_consecutivos'):
-            return self.profile.racha_dias_consecutivos
+        if self.manager:
+            try:
+                return self.manager.get_streak()
+            except:
+                pass
         return 0
 
     def get_completed_exercises(self):
-        """Ejercicios completados"""
-        if self.profile and hasattr(self.profile, 'ejercicios_completados'):
-            return self.profile.ejercicios_completados
+        if self.manager:
+            try:
+                return self.manager.get_completed_exercises()
+            except:
+                pass
         return 0
 
     def get_study_time(self):
-        """Tiempo de estudio en minutos"""
-        if self.profile and hasattr(self.profile, 'tiempo_total_minutos'):
-            return self.profile.tiempo_total_minutos
+        if self.manager:
+            try:
+                return self.manager.get_study_time()
+            except:
+                pass
         return 0
 
 
@@ -835,7 +864,7 @@ class PlaceholderWidget(QWidget):
 
 
 class MainWindow(QMainWindow):
-    """Ventana principal de AlfaIA - Corregida y completa"""
+    """Ventana principal de AlfaIA - COMPLETA Y CORREGIDA"""
 
     def __init__(self, user_data=None):
         super().__init__()
@@ -851,15 +880,15 @@ class MainWindow(QMainWindow):
             self.settings = self._create_basic_settings()
 
         try:
-            # Crear UserDataManager de forma segura
+            # Crear SafeUserDataManager de forma ultra segura
             if user_data:
-                self.user_data_manager = UserDataManager(user_data)
-                print(f"✅ UserDataManager creado para: {self.user_data_manager.get_display_name()}")
+                self.user_data_manager = SafeUserDataManager(user_data)
+                print(f"✅ SafeUserDataManager creado para: {self.user_data_manager.get_display_name()}")
             else:
                 print("⚠️ No se recibió user_data, creando manager demo")
                 self.user_data_manager = self._create_demo_manager()
         except Exception as e:
-            print(f"❌ Error creando UserDataManager: {e}")
+            print(f"❌ Error creando SafeUserDataManager: {e}")
             print("🔄 Creando manager demo como fallback")
             self.user_data_manager = self._create_demo_manager()
 
@@ -873,6 +902,8 @@ class MainWindow(QMainWindow):
             print("✅ MainWindow configurado exitosamente")
         except Exception as e:
             print(f"❌ Error configurando MainWindow: {e}")
+            import traceback
+            traceback.print_exc()
             self._setup_error_ui()
 
     def _create_basic_settings(self):
@@ -889,15 +920,13 @@ class MainWindow(QMainWindow):
                 'text_secondary': '#7F8C8D',
                 'gray_neutral': '#8E9AAF',
                 'blue_light': '#E8F4FD',
-                'white_pure': '#FFFFFF',
-                'background_primary': '#FFFFFF',
-                'background_secondary': '#F9FAFB'
+                'white_pure': '#FFFFFF'
             }
 
         return BasicSettings()
 
     def _create_demo_manager(self):
-        """Crear UserDataManager demo como fallback"""
+        """Crear SafeUserDataManager demo como fallback"""
 
         class DemoUser:
             def __init__(self):
@@ -907,7 +936,7 @@ class MainWindow(QMainWindow):
                 self.email = "demo@alfaia.com"
                 self.nivel_inicial = "Principiante"
 
-        return UserDataManager(DemoUser())
+        return SafeUserDataManager(DemoUser())
 
     def _setup_error_ui(self):
         """Configurar UI básica en caso de error"""
@@ -1134,7 +1163,10 @@ class MainWindow(QMainWindow):
             print("🚪 Cerrando sesión...")
 
             # Logout del auth_manager
-            auth_manager.logout()
+            try:
+                auth_manager.logout()
+            except:
+                pass
 
             # Cerrar ventana principal
             self.close()
@@ -1175,7 +1207,10 @@ class MainWindow(QMainWindow):
 
         if reply == QMessageBox.StandardButton.Yes:
             print("👋 Cerrando AlfaIA...")
-            auth_manager.logout()
+            try:
+                auth_manager.logout()
+            except:
+                pass
             event.accept()
         else:
             event.ignore()
