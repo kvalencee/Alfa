@@ -1,35 +1,37 @@
 # =============================================================================
-# AlfaIA/main.py - Punto de Entrada Principal (ACTUALIZADO PARA USUARIO)
+# AlfaIA/main.py - Punto de Entrada Corregido y Optimizado
 # =============================================================================
 
 import sys
 import logging
 from pathlib import Path
-from PyQt6.QtWidgets import QApplication, QMessageBox
-from PyQt6.QtCore import QTranslator, QLocale
-from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QMessageBox, QSplashScreen
+from PyQt6.QtCore import QTranslator, QLocale, QTimer, Qt
+from PyQt6.QtGui import QIcon, QPixmap, QPalette, QColor
 
 print("🚀 Iniciando AlfaIA...")
 
-# Configurar logging más detallado
+# Configurar logging
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('alfaia_debug.log'),
+        logging.FileHandler('alfaia.log'),
         logging.StreamHandler()
     ]
 )
 
 logger = logging.getLogger(__name__)
-logger.info("Sistema de logging inicializado")
+
+# Agregar path para imports
+sys.path.append(str(Path(__file__).parent))
 
 # Importar configuración y componentes principales
 try:
-    print("📦 Importando configuración...")
     from config.settings import Settings
     from config.database_config import DatabaseConfig
     from core.database.connection import DatabaseManager
+    from core.auth.authentication import auth_manager
 
     print("✅ Configuración importada exitosamente")
 except ImportError as e:
@@ -38,298 +40,317 @@ except ImportError as e:
 
 
 class AlfaIAApplication:
-    """Clase principal de la aplicación AlfaIA"""
+    """Aplicación principal de AlfaIA - Corregida y optimizada"""
 
     def __init__(self):
-        print("🏗️  Inicializando aplicación AlfaIA...")
         self.app = None
         self.main_window = None
         self.login_window = None
+        self.splash = None
         self.db_manager = None
-        self.current_user = None  # Para almacenar el usuario logueado
+        self.settings = Settings()
         self.logger = logging.getLogger(__name__)
-        print("✅ Clase AlfaIAApplication inicializada")
 
-    def initialize_database(self) -> bool:
-        """Inicializar conexión y esquema de base de datos"""
-        print("🗄️  Inicializando base de datos...")
+        print("🏗️ AlfaIAApplication inicializada")
+
+    def show_splash_screen(self):
+        """Mostrar pantalla de splash mientras carga la aplicación"""
         try:
-            self.db_manager = DatabaseManager()
+            # Crear splash screen simple
+            splash_pixmap = QPixmap(400, 300)
+            splash_pixmap.fill(QColor(self.settings.COLORS['blue_educational']))
 
-            # Probar conexión
-            print("📡 Probando conexión a BD...")
-            if not self.db_manager.test_connection():
-                self.show_database_error("No se pudo conectar a la base de datos MySQL.")
-                return False
+            self.splash = QSplashScreen(splash_pixmap)
+            self.splash.setStyleSheet(f"""
+                QSplashScreen {{
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bold;
+                }}
+            """)
 
-            # Crear esquema si no existe
-            print("🏗️  Creando esquema de BD...")
-            if not self.db_manager.create_database_schema():
-                self.show_database_error("Error creando esquema de base de datos.")
-                return False
+            self.splash.show()
+            self.splash.showMessage("🎓 Iniciando AlfaIA...",
+                                    alignment=Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignBottom)
 
-            self.logger.info("Base de datos inicializada correctamente")
-            print("✅ Base de datos inicializada correctamente")
-            return True
+            # Procesar eventos para mostrar el splash
+            self.app.processEvents()
 
         except Exception as e:
-            self.logger.error(f"Error inicializando BD: {e}")
-            self.show_database_error(f"Error de base de datos: {str(e)}")
-            print(f"❌ Error inicializando BD: {e}")
-            return False
+            print(f"⚠️ Error creando splash: {e}")
 
-    def show_database_error(self, message: str) -> None:
-        """Mostrar error de base de datos al usuario"""
-        print(f"🚨 Error de BD: {message}")
-        if self.app:
-            QMessageBox.critical(None, "Error de Base de Datos", message)
-        else:
-            print(f"ERROR BD: {message}")
+    def hide_splash_screen(self):
+        """Ocultar splash screen"""
+        if self.splash:
+            self.splash.close()
+            self.splash = None
 
     def initialize_app(self) -> bool:
         """Inicializar aplicación PyQt6"""
-        print("🖼️  Inicializando PyQt6...")
         try:
             self.app = QApplication(sys.argv)
-            settings = Settings()
-            self.app.setApplicationName(settings.APP_NAME)
-            self.app.setApplicationVersion(settings.APP_VERSION)
+
+            # Configurar aplicación
+            self.app.setApplicationName(self.settings.APP_NAME)
+            self.app.setApplicationVersion(self.settings.APP_VERSION)
+            self.app.setOrganizationName("AlfaIA")
+
+            # Mostrar splash
+            self.show_splash_screen()
+
+            # Configurar estilo global
+            self.setup_global_style()
 
             self.logger.info("Aplicación PyQt6 inicializada")
-            print("✅ PyQt6 inicializado exitosamente")
             return True
 
         except Exception as e:
             self.logger.error(f"Error inicializando aplicación: {e}")
-            print(f"❌ Error inicializando PyQt6: {e}")
             return False
 
-    def show_main_window(self):
-        """Mostrar ventana principal después del login exitoso"""
-        print("🏠 Intentando mostrar ventana principal...")
+    def setup_global_style(self):
+        """Configurar estilo global de la aplicación"""
+        global_style = f"""
+            /* Estilo global para toda la aplicación */
+            QApplication {{
+                font-family: 'Segoe UI', 'Arial', sans-serif;
+                font-size: 14px;
+            }}
+
+            /* Mensajes de diálogo */
+            QMessageBox {{
+                background-color: white;
+                color: {self.settings.COLORS['text_primary']};
+                font-size: 14px;
+                min-width: 350px;
+            }}
+
+            QMessageBox QPushButton {{
+                background-color: {self.settings.COLORS['blue_educational']};
+                color: white;
+                border: none;
+                border-radius: 6px;
+                padding: 8px 16px;
+                font-weight: 600;
+                min-width: 80px;
+            }}
+
+            QMessageBox QPushButton:hover {{
+                background-color: #3a7bd5;
+            }}
+
+            /* Barras de scroll globales */
+            QScrollBar:vertical {{
+                background-color: #f1f5f9;
+                width: 12px;
+                border-radius: 6px;
+                margin: 0;
+            }}
+
+            QScrollBar::handle:vertical {{
+                background-color: {self.settings.COLORS['gray_neutral']};
+                border-radius: 6px;
+                min-height: 20px;
+                margin: 2px;
+            }}
+
+            QScrollBar::handle:vertical:hover {{
+                background-color: {self.settings.COLORS['blue_educational']};
+            }}
+
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
+                border: none;
+                background: none;
+                height: 0px;
+            }}
+
+            /* Tooltips */
+            QToolTip {{
+                background-color: {self.settings.COLORS['text_primary']};
+                color: white;
+                border: none;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }}
+        """
+
+        self.app.setStyleSheet(global_style)
+
+    def initialize_database(self) -> bool:
+        """Inicializar base de datos"""
         try:
-            # Verificar múltiples fuentes para obtener el usuario
-            print("🔍 Buscando usuario logueado...")
+            if self.splash:
+                self.splash.showMessage("🗄️ Conectando a base de datos...",
+                                        alignment=Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignBottom)
+                self.app.processEvents()
 
-            self.current_user = None
+            self.db_manager = DatabaseManager()
 
-            # Método 1: Intentar desde auth_manager
-            try:
-                from core.auth.authentication import auth_manager
-                self.current_user = auth_manager.get_current_user()
-                if self.current_user:
-                    print(
-                        f"✅ Usuario obtenido desde auth_manager: {self.current_user.nombre} {self.current_user.apellido}")
-                else:
-                    print("⚠️ auth_manager.get_current_user() retornó None")
-            except Exception as e:
-                print(f"❌ Error accediendo a auth_manager: {e}")
+            # Probar conexión
+            if not self.db_manager.test_connection():
+                self.show_database_error(
+                    "No se pudo conectar a MySQL.\n\nVerifica que MySQL esté ejecutándose y las credenciales sean correctas.")
+                return False
 
-            # Método 2: Si no hay usuario, intentar desde la ventana de login
-            if not self.current_user and self.login_window:
-                try:
-                    # Verificar si el login window tiene información del usuario
-                    if hasattr(self.login_window, 'login_form') and hasattr(self.login_window.login_form,
-                                                                            'email_input'):
-                        email = self.login_window.login_form.email_input.text().strip()
-                        if email:
-                            print(f"🔍 Intentando buscar usuario por email: {email}")
-                            from core.database.models import Usuario
-                            self.current_user = Usuario.find_by_email(email)
-                            if self.current_user:
-                                print(f"✅ Usuario encontrado por email: {self.current_user.nombre}")
-                except Exception as e:
-                    print(f"❌ Error buscando usuario por email: {e}")
+            # Crear esquema
+            if not self.db_manager.create_database_schema():
+                self.show_database_error("Error creando las tablas de la base de datos.")
+                return False
 
-            # Método 3: Crear usuario demo temporal si no se encuentra ninguno
-            if not self.current_user:
-                print("⚠️ No se pudo obtener usuario real, creando usuario demo temporal")
-                self.current_user = self.create_demo_user()
-
-            # Verificar que tenemos un usuario válido
-            if not self.current_user:
-                print("❌ No se pudo obtener ningún usuario")
-                QMessageBox.critical(None, "Error", "No se pudo obtener información del usuario logueado")
-                return
-
-            print(f"✅ Usuario final para MainWindow: {self.current_user.nombre} {self.current_user.apellido}")
-
-            # Importación tardía para evitar problemas de imports circulares
-            from ui.windows.main_window import MainWindow
-            print("📦 MainWindow importado exitosamente")
-
-            # Pasar el usuario al MainWindow
-            self.main_window = MainWindow(user_data=self.current_user)
-            print("🏗️  MainWindow creado con datos de usuario")
-
-            self.main_window.show()
-            print("✅ MainWindow mostrado")
-
-            # Cerrar ventana de login
-            if self.login_window:
-                self.login_window.close()
-                print("🔒 Ventana de login cerrada")
-
-            self.logger.info("Ventana principal mostrada")
+            self.logger.info("Base de datos inicializada")
+            return True
 
         except Exception as e:
-            self.logger.error(f"Error mostrando ventana principal: {e}")
-            print(f"❌ Error mostrando ventana principal: {e}")
-            import traceback
-            traceback.print_exc()
-            QMessageBox.critical(None, "Error", f"No se pudo abrir la ventana principal: {str(e)}")
+            self.logger.error(f"Error inicializando BD: {e}")
+            self.show_database_error(f"Error de conexión a base de datos:\n{str(e)}")
+            return False
 
-    def create_demo_user(self):
-        """Crear usuario demo temporal para casos de emergencia"""
-        try:
-            print("🔧 Creando usuario demo temporal...")
-
-            # Crear una clase simple para usuario demo
-            class DemoUser:
-                def __init__(self):
-                    self.id = 999
-                    self.nombre = "Usuario"
-                    self.apellido = "Demo"
-                    self.email = "demo@alfaia.com"
-                    self.nivel_inicial = "Principiante"
-
-            demo_user = DemoUser()
-            print(f"✅ Usuario demo creado: {demo_user.nombre} {demo_user.apellido}")
-            return demo_user
-
-        except Exception as e:
-            print(f"❌ Error creando usuario demo: {e}")
-            return None
+    def show_database_error(self, message: str):
+        """Mostrar error de base de datos"""
+        self.hide_splash_screen()
+        QMessageBox.critical(None, "Error de Base de Datos", message)
 
     def show_login_window(self):
         """Mostrar ventana de login"""
-        print("🔑 Intentando mostrar ventana de login...")
         try:
-            from ui.windows.login_window import LoginWindow
-            print("📦 LoginWindow importado exitosamente")
+            if self.splash:
+                self.splash.showMessage("🔑 Cargando sistema de autenticación...",
+                                        alignment=Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignBottom)
+                self.app.processEvents()
 
+            from ui.windows.login_window import LoginWindow
             self.login_window = LoginWindow()
-            print("🏗️  LoginWindow creado")
 
             # Conectar señal de login exitoso
             self.login_window.login_successful.connect(self.on_login_success)
-            print("🔗 Señales conectadas")
 
+            # Ocultar splash y mostrar login
+            self.hide_splash_screen()
             self.login_window.show()
-            print("✅ LoginWindow mostrado")
 
+            self.logger.info("Ventana de login mostrada")
             return True
 
         except Exception as e:
             self.logger.error(f"Error creando ventana de login: {e}")
-            print(f"❌ Error creando ventana de login: {e}")
-            import traceback
-            traceback.print_exc()
-            QMessageBox.critical(None, "Error", f"No se pudo crear la ventana de login: {str(e)}")
+            self.hide_splash_screen()
+            QMessageBox.critical(None, "Error", f"No se pudo cargar la ventana de login:\n{str(e)}")
             return False
 
     def on_login_success(self):
-        """Manejar login exitoso con delay para asegurar que el usuario esté en auth_manager"""
-        print("🎉 Login exitoso detectado!")
+        """Manejar login exitoso"""
+        print("🎉 Login exitoso - Cargando ventana principal...")
 
-        # Pequeño delay para asegurar que el usuario esté guardado en auth_manager
-        from PyQt6.QtCore import QTimer
-        QTimer.singleShot(500, self.show_main_window)  # 500ms delay
+        # Pequeño delay para asegurar que el auth_manager esté actualizado
+        QTimer.singleShot(200, self.show_main_window)
+
+    def show_main_window(self):
+        """Mostrar ventana principal"""
+        try:
+            # Obtener usuario del auth_manager
+            current_user = auth_manager.get_current_user()
+
+            if not current_user:
+                QMessageBox.warning(None, "Error", "No se pudo obtener información del usuario.")
+                return
+
+            print(f"👤 Cargando ventana principal para: {current_user.nombre} {current_user.apellido}")
+
+            # Importar y crear ventana principal
+            from ui.windows.main_window import MainWindow
+            self.main_window = MainWindow(current_user)
+
+            # Mostrar ventana principal
+            self.main_window.show()
+
+            # Cerrar y limpiar ventana de login
+            if self.login_window:
+                self.login_window.close()
+                self.login_window = None
+
+            self.logger.info(f"Ventana principal mostrada para usuario: {current_user.email}")
+            print("✅ Ventana principal cargada exitosamente")
+
+        except Exception as e:
+            self.logger.error(f"Error mostrando ventana principal: {e}")
+            QMessageBox.critical(None, "Error", f"No se pudo cargar la ventana principal:\n{str(e)}")
+            import traceback
+            traceback.print_exc()
 
     def run(self) -> int:
-        """Ejecutar la aplicación principal"""
-        print("🎬 Ejecutando aplicación...")
+        """Ejecutar aplicación"""
         try:
-            # Paso 1: Inicializar aplicación PyQt6
-            print("\n--- PASO 1: Inicializar PyQt6 ---")
+            print("\n=== INICIANDO ALFAIA ===")
+
+            # 1. Inicializar PyQt6
             if not self.initialize_app():
-                print("❌ Falló inicialización de PyQt6")
                 return 1
 
-            # Paso 2: Inicializar base de datos
-            print("\n--- PASO 2: Inicializar Base de Datos ---")
+            # 2. Inicializar base de datos
             if not self.initialize_database():
-                print("❌ Falló inicialización de BD")
                 return 1
 
-            # Paso 3: Mostrar ventana de login
-            print("\n--- PASO 3: Mostrar Ventana de Login ---")
+            # 3. Mostrar login
             if not self.show_login_window():
-                print("❌ Falló creación de ventana de login")
                 return 1
 
+            # 4. Ejecutar aplicación
             self.logger.info("AlfaIA iniciado exitosamente")
-            print("🎉 AlfaIA iniciado exitosamente")
+            print("🎉 AlfaIA listo para usar")
 
-            # Paso 4: Ejecutar loop de eventos
-            print("\n--- PASO 4: Iniciando Loop de Eventos ---")
-            print("🔄 Entrando en loop de eventos de PyQt6...")
-            result = self.app.exec()
-            print(f"🏁 Loop de eventos terminado con código: {result}")
-            return result
+            return self.app.exec()
 
         except Exception as e:
             self.logger.error(f"Error ejecutando aplicación: {e}")
-            print(f"❌ Error fatal ejecutando aplicación: {e}")
-            import traceback
-            traceback.print_exc()
+            self.hide_splash_screen()
+            QMessageBox.critical(None, "Error Fatal", f"Error inesperado:\n{str(e)}")
             return 1
 
-    def cleanup(self) -> None:
-        """Limpiar recursos antes de cerrar"""
-        print("🧹 Limpiando recursos...")
+    def cleanup(self):
+        """Limpiar recursos"""
         try:
+            self.hide_splash_screen()
+
             if self.main_window:
                 self.main_window.close()
-                print("✅ MainWindow cerrado")
 
             if self.login_window:
                 self.login_window.close()
-                print("✅ LoginWindow cerrado")
 
-            if self.db_manager and self.db_manager._pool:
-                # Cerrar pool de conexiones si existe
-                print("✅ Pool de BD cerrado")
+            # Logout del auth_manager
+            auth_manager.logout()
 
-            self.logger.info("Recursos limpiados correctamente")
-            print("✅ Recursos limpiados correctamente")
+            self.logger.info("Recursos limpiados")
 
         except Exception as e:
             self.logger.error(f"Error en cleanup: {e}")
-            print(f"❌ Error en cleanup: {e}")
 
 
 def main():
-    """Función principal de entrada"""
-    print("=" * 60)
+    """Función principal"""
+    print("=" * 50)
     print("🎓 ALFAIA - APLICACIÓN EDUCATIVA")
-    print("=" * 60)
+    print("=" * 50)
 
     app = AlfaIAApplication()
+    exit_code = 0
 
     try:
-        # Ejecutar aplicación
-        print("🚀 Iniciando ejecución...")
         exit_code = app.run()
-        print(f"🏁 Aplicación terminada con código: {exit_code}")
 
     except KeyboardInterrupt:
-        print("\n⚠️  Aplicación interrumpida por el usuario")
+        print("\n⚠️ Aplicación interrumpida por el usuario")
         exit_code = 0
 
     except Exception as e:
         print(f"❌ Error fatal: {e}")
-        logging.getLogger(__name__).error(f"Error fatal: {e}", exc_info=True)
-        import traceback
-        traceback.print_exc()
         exit_code = 1
 
     finally:
-        # Limpiar recursos
-        print("\n--- CLEANUP ---")
         app.cleanup()
+        print(f"\n🏁 AlfaIA terminado con código: {exit_code}")
 
-    print(f"\n🏁 Finalizando con código de salida: {exit_code}")
     sys.exit(exit_code)
 
 
