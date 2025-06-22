@@ -15,7 +15,6 @@ except ImportError as e:
     print(f"❌ Error importando ExercisesMainWidget: {e}")
     ExercisesMainWidget = None
 
-print("🚀 Iniciando AlfaIA (versión simplificada)...")
 
 # Configurar logging básico
 logging.basicConfig(level=logging.INFO)
