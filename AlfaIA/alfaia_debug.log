@@ -1,0 +1,1002 @@
+2025-06-21 17:11:56,255 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:11:56,300 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:11:56,328 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,377 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,380 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,380 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,380 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,381 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:11:56,381 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:11:56,381 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:11:56,382 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,382 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,385 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,433 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,435 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,435 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,435 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,436 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,436 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,458 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,518 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,522 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,522 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,522 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,522 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,523 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,525 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,590 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,593 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,593 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,593 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,593 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,593 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,595 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,642 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,644 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,645 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,645 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,645 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,645 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,646 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,693 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,698 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,698 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,698 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,699 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,699 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,710 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,760 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,763 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,763 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,763 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,763 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,764 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,765 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,810 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,812 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,812 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,812 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,813 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,813 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,814 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,857 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,860 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,860 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,860 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,860 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,860 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,862 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,907 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,911 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,911 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,911 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,911 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,911 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,929 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:11:56,977 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:11:56,981 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:11:56,981 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:11:56,981 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:11:56,981 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:11:56,981 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:11:56,982 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:11:56,986 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:11:56,987 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:11:56,989 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:11:56,991 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:11:56,994 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:11:57,003 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:11:57,006 - __main__ - ERROR - Error creando ventana de login: cannot import name 'Usuario' from 'core.database.models' (C:\Users\Kevin Valencia\Documents\ESCOM\ADS\AlfaIA\AlfaIA\core\database\models.py)
+2025-06-21 17:17:45,449 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:17:45,493 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:17:45,520 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,569 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,573 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,573 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,573 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,573 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:17:45,573 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:17:45,574 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:17:45,574 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,574 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,578 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,675 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,679 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,680 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,680 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,680 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,680 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,683 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,744 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,748 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,748 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,748 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,748 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,748 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,750 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,796 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,799 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,799 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,799 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,799 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,799 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,801 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,848 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,851 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,852 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,852 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,852 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,852 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,854 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,910 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,913 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,913 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,913 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,914 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,914 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,916 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:45,965 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:45,968 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:45,968 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:45,968 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:45,969 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:45,969 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:45,971 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:46,025 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:46,028 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:46,028 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:46,028 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:46,028 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:46,028 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:46,030 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:46,077 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:46,080 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:46,080 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:46,080 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:46,080 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:46,080 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:46,095 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:46,141 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:46,144 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:46,144 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:46,144 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:46,144 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:46,144 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:46,146 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:17:46,192 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:17:46,195 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:17:46,196 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:17:46,196 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:17:46,196 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:17:46,196 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:17:46,197 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:17:46,200 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:17:46,202 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:17:46,204 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:17:46,206 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:17:46,208 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:17:46,218 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:17:46,228 - __main__ - ERROR - Error creando ventana de login: invalid syntax (login_window.py, line 406)
+2025-06-21 17:17:51,320 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:33:26,053 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:33:26,095 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:33:26,124 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,169 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,172 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,172 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,172 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,172 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:33:26,172 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:33:26,173 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:33:26,173 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,173 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,176 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,223 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,226 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,226 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,226 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,227 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,227 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,228 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,277 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,280 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,280 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,280 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,280 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,280 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,282 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,331 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,334 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,334 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,334 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,334 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,334 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,336 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,386 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,389 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,389 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,389 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,389 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,389 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,391 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,440 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,442 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,443 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,443 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,443 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,443 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,444 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,490 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,492 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,493 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,493 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,493 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,493 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,495 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,543 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,546 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,546 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,546 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,546 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,546 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,548 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,595 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,598 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,598 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,598 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,599 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,599 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,600 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,645 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,648 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,648 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,648 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,648 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,648 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,650 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:33:26,695 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:33:26,698 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:33:26,698 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:33:26,698 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:33:26,698 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:33:26,698 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:33:26,699 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:33:26,702 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:33:26,704 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:33:26,707 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:33:26,709 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:33:26,711 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:33:26,721 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:33:27,378 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 17:36:25,771 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:36:25,813 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:36:25,837 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:25,883 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:25,887 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:25,887 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:25,887 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:25,887 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:36:25,887 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:36:25,887 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:36:25,887 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:25,888 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:25,891 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:25,939 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:25,942 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:25,942 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:25,942 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:25,943 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:25,943 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:25,954 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,008 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,011 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,011 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,011 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,012 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,012 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,013 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,062 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,065 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,065 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,065 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,065 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,065 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,080 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,125 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,128 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,128 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,128 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,128 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,128 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,130 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,173 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,175 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,175 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,175 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,176 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,176 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,177 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,222 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,225 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,225 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,225 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,225 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,226 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,227 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,279 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,282 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,282 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,282 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,283 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,283 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,285 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,334 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,336 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,336 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,337 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,337 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,337 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,338 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,381 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,383 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,383 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,383 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,383 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,384 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,385 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:36:26,429 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:36:26,432 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:36:26,432 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:36:26,432 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:36:26,432 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:36:26,432 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:36:26,433 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:36:26,436 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:36:26,439 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:36:26,441 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:36:26,444 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:36:26,446 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:36:26,459 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:36:26,865 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 17:38:24,151 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:39:54,823 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:39:54,869 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:39:54,897 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:54,949 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:54,952 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:54,953 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:54,953 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:54,953 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:39:54,953 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:39:54,953 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:39:54,953 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:54,953 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:54,980 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,028 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,030 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,030 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,031 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,031 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,031 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,033 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,081 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,084 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,084 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,084 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,084 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,084 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,086 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,132 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,135 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,135 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,135 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,135 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,135 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,153 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,199 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,202 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,202 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,203 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,203 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,203 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,205 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,252 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,255 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,255 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,255 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,255 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,255 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,257 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,303 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,306 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,306 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,306 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,307 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,307 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,308 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,356 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,358 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,358 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,358 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,358 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,358 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,360 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,403 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,405 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,405 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,405 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,406 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,406 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,407 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,450 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,453 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,453 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,453 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,453 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,453 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,455 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:39:55,502 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:39:55,505 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:39:55,505 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:39:55,505 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:39:55,505 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:39:55,505 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:39:55,506 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:39:55,511 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:39:55,515 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:39:55,517 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:39:55,520 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:39:55,523 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:39:55,536 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:39:55,921 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 17:42:17,577 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:42:21,540 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:42:21,584 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:42:21,609 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,654 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,658 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,658 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,658 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,658 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:42:21,658 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:42:21,658 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:42:21,659 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,659 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,662 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,708 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,710 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,710 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,710 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,711 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,711 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,712 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,759 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,762 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,762 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,762 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,762 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,763 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,765 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,810 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,813 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,813 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,813 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,814 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,814 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,816 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,863 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,866 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,866 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,866 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,866 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,866 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,868 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,922 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,925 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,925 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,925 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,925 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,926 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,927 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:21,972 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:21,975 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:21,975 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:21,975 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:21,975 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:21,975 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:21,997 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:22,047 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:22,050 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:22,050 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:22,050 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:22,050 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:22,050 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:22,052 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:22,101 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:22,103 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:22,103 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:22,103 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:22,103 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:22,103 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:22,105 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:22,151 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:22,154 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:22,154 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:22,154 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:22,154 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:22,154 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:22,165 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:42:22,213 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:42:22,216 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:42:22,216 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:42:22,216 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:42:22,216 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:42:22,217 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:42:22,217 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:42:22,221 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:42:22,223 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:42:22,226 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:42:22,228 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:42:22,231 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:42:22,243 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:42:22,733 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 17:43:27,317 - __main__ - INFO - Ventana principal mostrada
+2025-06-21 17:43:36,183 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 17:45:22,614 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 17:45:22,654 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 17:45:22,679 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:22,725 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:22,728 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:22,728 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:22,728 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:22,728 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 17:45:22,728 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 17:45:22,728 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 17:45:22,728 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:22,728 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:22,731 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:22,776 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:22,778 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:22,779 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:22,779 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:22,779 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:22,779 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:22,780 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:22,830 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:22,834 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:22,834 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:22,834 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:22,834 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:22,834 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:22,836 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:22,889 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:22,892 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:22,892 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:22,893 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:22,893 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:22,893 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:22,895 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:22,941 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:22,944 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:22,944 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:22,944 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:22,944 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:22,945 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:22,946 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,006 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,008 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,009 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,009 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,009 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,009 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,035 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,082 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,085 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,085 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,085 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,085 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,085 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,087 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,134 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,137 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,137 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,137 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,138 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,138 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,139 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,183 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,186 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,186 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,186 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,186 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,186 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,188 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,232 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,235 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,235 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,235 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,236 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,236 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,250 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 17:45:23,300 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 17:45:23,303 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 17:45:23,303 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 17:45:23,303 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 17:45:23,303 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 17:45:23,303 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 17:45:23,304 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 17:45:23,307 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 17:45:23,309 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 17:45:23,311 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 17:45:23,314 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 17:45:23,316 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 17:45:23,326 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 17:45:23,733 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 17:45:41,220 - __main__ - INFO - Ventana principal mostrada
+2025-06-21 18:00:05,961 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 18:00:06,008 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 18:00:06,044 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,093 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,096 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,096 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,096 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,096 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 18:00:06,096 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 18:00:06,096 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 18:00:06,097 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,097 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,100 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,144 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,146 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,146 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,146 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,146 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,146 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,148 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,208 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,212 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,212 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,212 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,212 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,213 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,239 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,286 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,289 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,289 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,289 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,290 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,290 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,301 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,347 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,350 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,350 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,350 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,350 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,350 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,364 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,419 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,423 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,423 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,423 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,423 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,424 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,425 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,486 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,489 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,490 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,490 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,490 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,490 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,492 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,540 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,543 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,543 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,543 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,543 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,544 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,545 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,597 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,600 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,600 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,600 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,600 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,601 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,602 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,650 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,654 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,654 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,654 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,654 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,654 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,657 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:06,707 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:06,710 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:06,710 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:06,711 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:06,711 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:06,711 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:06,712 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 18:00:06,715 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 18:00:06,717 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 18:00:06,719 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 18:00:06,722 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 18:00:06,725 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 18:00:06,737 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 18:00:07,240 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 18:00:13,035 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 18:00:14,815 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 18:00:14,855 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 18:00:14,877 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:14,922 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:14,925 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:14,925 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:14,925 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:14,925 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 18:00:14,925 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 18:00:14,925 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 18:00:14,926 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:14,926 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:14,929 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:14,973 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:14,975 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:14,975 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:14,975 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:14,976 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:14,976 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:14,977 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,034 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,038 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,038 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,038 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,038 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,039 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,040 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,100 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,103 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,103 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,103 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,103 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,103 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,105 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,150 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,152 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,153 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,153 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,153 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,153 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,169 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,214 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,218 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,218 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,218 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,218 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,219 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,220 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,266 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,269 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,269 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,269 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,269 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,270 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,271 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,316 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,319 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,320 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,320 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,320 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,320 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,322 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,367 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,369 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,369 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,369 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,370 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,370 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,371 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,416 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,418 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,418 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,418 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,418 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,419 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,420 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:15,464 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:15,468 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:15,468 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:15,468 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:15,468 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:15,469 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:15,469 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 18:00:15,475 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 18:00:15,476 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 18:00:15,479 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 18:00:15,482 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 18:00:15,485 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 18:00:15,498 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 18:00:15,972 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 18:00:36,057 - __main__ - INFO - Ventana principal mostrada
+2025-06-21 18:00:40,553 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 18:00:42,360 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 18:00:42,400 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 18:00:42,423 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,467 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,470 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,470 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,470 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,471 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 18:00:42,471 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 18:00:42,471 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 18:00:42,471 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,471 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,474 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,516 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,519 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,519 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,519 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,519 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,520 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,521 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,571 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,574 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,575 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,575 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,575 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,575 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,577 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,633 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,636 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,636 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,636 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,636 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,637 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,638 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,685 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,688 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,688 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,688 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,688 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,688 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,690 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,736 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,738 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,738 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,738 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,739 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,739 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,740 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,791 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,794 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,795 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,795 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,795 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,795 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,797 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,846 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,849 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,849 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,849 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,850 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,850 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,852 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,901 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,904 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,904 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,904 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,904 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,904 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,905 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:42,952 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:42,955 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:42,955 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:42,955 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:42,955 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:42,955 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:42,959 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:00:43,006 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:00:43,009 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:00:43,009 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:00:43,009 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:00:43,009 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:00:43,009 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:00:43,010 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 18:00:43,014 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 18:00:43,016 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 18:00:43,019 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 18:00:43,022 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 18:00:43,024 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 18:00:43,035 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 18:00:43,449 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 18:00:55,243 - __main__ - INFO - Recursos limpiados correctamente
+2025-06-21 18:07:52,681 - __main__ - INFO - Sistema de logging inicializado
+2025-06-21 18:07:52,724 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-21 18:07:52,752 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:52,798 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:52,801 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:52,801 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:52,801 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:52,801 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-21 18:07:52,801 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-21 18:07:52,801 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-21 18:07:52,802 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:52,802 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:52,806 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:52,849 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:52,852 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:52,852 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:52,852 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:52,852 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:52,852 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:52,854 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:52,902 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:52,905 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:52,905 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:52,905 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:52,906 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:52,906 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:52,908 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:52,957 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:52,960 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:52,960 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:52,960 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:52,961 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:52,961 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:52,963 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,015 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,019 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,019 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,019 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,019 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,019 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,021 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,074 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,077 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,077 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,077 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,078 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,078 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,080 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,136 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,139 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,139 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,139 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,139 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,139 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,165 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,216 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,218 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,218 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,218 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,219 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,219 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,220 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,266 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,268 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,268 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,268 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,268 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,269 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,270 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,313 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,316 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,316 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,316 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,316 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,316 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,317 - mysql.connector - DEBUG - Building SSL context
+2025-06-21 18:07:53,365 - mysql.connector - DEBUG - Switching to SSL
+2025-06-21 18:07:53,368 - mysql.connector - DEBUG - SSL has been enabled
+2025-06-21 18:07:53,368 - mysql.connector - DEBUG - Starting authorization phase
+2025-06-21 18:07:53,368 - mysql.connector - DEBUG - The provided initial strategy is caching_sha2_password
+2025-06-21 18:07:53,368 - mysql.connector - DEBUG - Exchanging further packets
+2025-06-21 18:07:53,368 - mysql.connector - DEBUG - caching_sha2_password completed succesfully
+2025-06-21 18:07:53,369 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-21 18:07:53,373 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-21 18:07:53,376 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-21 18:07:53,378 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-21 18:07:53,380 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-21 18:07:53,383 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-21 18:07:53,393 - __main__ - INFO - Base de datos inicializada correctamente
+2025-06-21 18:07:53,816 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-21 18:08:23,954 - __main__ - INFO - Ventana principal mostrada
+2025-06-21 18:08:29,678 - __main__ - INFO - Recursos limpiados correctamente
