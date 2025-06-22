@@ -17,7 +17,12 @@ from PyQt6.QtGui import QFont, QColor, QPalette, QIcon, QAction
 
 # Agregar path para imports
 sys.path.append(str(Path(__file__).parent.parent.parent))
-
+try:
+    from modules.exercises.exercises_main_widget import ExercisesMainWidget
+    print("✅ ExercisesMainWidget importado correctamente")
+except ImportError as e:
+    print(f"❌ Error importando ExercisesMainWidget: {e}")
+    ExercisesMainWidget = None
 # IMPORTS SEGUROS CON FALLBACKS
 try:
     from config.settings import Settings
@@ -991,20 +996,68 @@ class MainWindow(QMainWindow):
         """)
 
     def create_content_widgets(self):
-        """Crear widgets de contenido para cada sección"""
-        # Dashboard principal
-        if self.user_data_manager:
+        # 1. DASHBOARD PRINCIPAL
+        if self.user_data_manager and DashboardWidget:
             dashboard = DashboardWidget(self.user_data_manager)
         else:
-            dashboard = PlaceholderWidget("dashboard", None)
-
+            dashboard = PlaceholderWidget("dashboard", self.user_data_manager)
         self.content_stack.addWidget(dashboard)
 
-        # Placeholders para módulos futuros
-        modules = ['exercises', 'games', 'progress', 'achievements', 'profile', 'settings']
-        for module in modules:
+        # 2. MÓDULO DE EJERCICIOS (IMPLEMENTADO)
+        if ExercisesMainWidget:
+            try:
+                self.exercises_widget = ExercisesMainWidget(
+                    user_data=self.user_data_manager,
+                    parent=self
+                )
+
+                # Conectar señales específicas de ejercicios
+                self.exercises_widget.exercise_completed.connect(self.on_exercise_completed)
+
+                self.content_stack.addWidget(self.exercises_widget)
+                print("✅ Módulo de Ejercicios REAL conectado")
+
+            except Exception as e:
+                print(f"❌ Error creando ExercisesMainWidget: {e}")
+                exercises_placeholder = PlaceholderWidget("exercises", self.user_data_manager)
+                self.content_stack.addWidget(exercises_placeholder)
+        else:
+            exercises_placeholder = PlaceholderWidget("exercises", self.user_data_manager)
+            self.content_stack.addWidget(exercises_placeholder)
+
+        # 3. MÓDULOS PENDIENTES (placeholders)
+        pending_modules = ['games', 'progress', 'achievements', 'profile', 'settings']
+        for module in pending_modules:
             placeholder = PlaceholderWidget(module, self.user_data_manager)
             self.content_stack.addWidget(placeholder)
+
+    def on_exercise_completed(self, result: dict):
+        """Manejar ejercicio completado"""
+        print(f"🎉 Ejercicio completado en MainWindow: {result}")
+
+        try:
+            score = result.get('score', 0)
+            max_score = result.get('max_score', 100)
+            exercise_type = result.get('exercise_type', 'Desconocido')
+
+            QMessageBox.information(
+                self,
+                "🎉 ¡Ejercicio Completado!",
+                f"Tipo: {exercise_type}\n"
+                f"Puntuación: {score}/{max_score}\n"
+                f"¡Buen trabajo!"
+            )
+        except Exception as e:
+            print(f"⚠️ Error mostrando resultado: {e}")
+
+    def connect_signals(self):
+        """Conectar señales de la aplicación"""
+        if hasattr(self, 'exercises_widget'):
+            # Conectar señales específicas del módulo de ejercicios
+            if hasattr(self.exercises_widget, 'back_to_dashboard'):
+                self.exercises_widget.back_to_dashboard.connect(
+                    lambda: self.change_section('dashboard')
+                )
 
     def setup_menu_bar(self):
         """Configurar barra de menú"""

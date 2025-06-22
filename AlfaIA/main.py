@@ -8,6 +8,12 @@ from pathlib import Path
 from PyQt6.QtWidgets import QApplication, QMessageBox, QSplashScreen
 from PyQt6.QtCore import QTimer, Qt
 from PyQt6.QtGui import QPixmap, QColor
+try:
+    from modules.exercises.exercises_main_widget import ExercisesMainWidget
+    print("✅ ExercisesMainWidget importado correctamente")
+except ImportError as e:
+    print(f"❌ Error importando ExercisesMainWidget: {e}")
+    ExercisesMainWidget = None
 
 print("🚀 Iniciando AlfaIA (versión simplificada)...")
 
