@@ -1,5 +1,5 @@
 # =============================================================================
-# AlfaIA/main.py - Punto de Entrada Principal (CON DEBUG COMPLETO)
+# AlfaIA/main.py - Punto de Entrada Principal (ACTUALIZADO PARA USUARIO)
 # =============================================================================
 
 import sys
@@ -46,6 +46,7 @@ class AlfaIAApplication:
         self.main_window = None
         self.login_window = None
         self.db_manager = None
+        self.current_user = None  # Para almacenar el usuario logueado
         self.logger = logging.getLogger(__name__)
         print("✅ Clase AlfaIAApplication inicializada")
 
@@ -107,12 +108,59 @@ class AlfaIAApplication:
         """Mostrar ventana principal después del login exitoso"""
         print("🏠 Intentando mostrar ventana principal...")
         try:
+            # Verificar múltiples fuentes para obtener el usuario
+            print("🔍 Buscando usuario logueado...")
+
+            self.current_user = None
+
+            # Método 1: Intentar desde auth_manager
+            try:
+                from core.auth.authentication import auth_manager
+                self.current_user = auth_manager.get_current_user()
+                if self.current_user:
+                    print(
+                        f"✅ Usuario obtenido desde auth_manager: {self.current_user.nombre} {self.current_user.apellido}")
+                else:
+                    print("⚠️ auth_manager.get_current_user() retornó None")
+            except Exception as e:
+                print(f"❌ Error accediendo a auth_manager: {e}")
+
+            # Método 2: Si no hay usuario, intentar desde la ventana de login
+            if not self.current_user and self.login_window:
+                try:
+                    # Verificar si el login window tiene información del usuario
+                    if hasattr(self.login_window, 'login_form') and hasattr(self.login_window.login_form,
+                                                                            'email_input'):
+                        email = self.login_window.login_form.email_input.text().strip()
+                        if email:
+                            print(f"🔍 Intentando buscar usuario por email: {email}")
+                            from core.database.models import Usuario
+                            self.current_user = Usuario.find_by_email(email)
+                            if self.current_user:
+                                print(f"✅ Usuario encontrado por email: {self.current_user.nombre}")
+                except Exception as e:
+                    print(f"❌ Error buscando usuario por email: {e}")
+
+            # Método 3: Crear usuario demo temporal si no se encuentra ninguno
+            if not self.current_user:
+                print("⚠️ No se pudo obtener usuario real, creando usuario demo temporal")
+                self.current_user = self.create_demo_user()
+
+            # Verificar que tenemos un usuario válido
+            if not self.current_user:
+                print("❌ No se pudo obtener ningún usuario")
+                QMessageBox.critical(None, "Error", "No se pudo obtener información del usuario logueado")
+                return
+
+            print(f"✅ Usuario final para MainWindow: {self.current_user.nombre} {self.current_user.apellido}")
+
             # Importación tardía para evitar problemas de imports circulares
             from ui.windows.main_window import MainWindow
             print("📦 MainWindow importado exitosamente")
 
-            self.main_window = MainWindow()
-            print("🏗️  MainWindow creado")
+            # Pasar el usuario al MainWindow
+            self.main_window = MainWindow(user_data=self.current_user)
+            print("🏗️  MainWindow creado con datos de usuario")
 
             self.main_window.show()
             print("✅ MainWindow mostrado")
@@ -127,7 +175,31 @@ class AlfaIAApplication:
         except Exception as e:
             self.logger.error(f"Error mostrando ventana principal: {e}")
             print(f"❌ Error mostrando ventana principal: {e}")
+            import traceback
+            traceback.print_exc()
             QMessageBox.critical(None, "Error", f"No se pudo abrir la ventana principal: {str(e)}")
+
+    def create_demo_user(self):
+        """Crear usuario demo temporal para casos de emergencia"""
+        try:
+            print("🔧 Creando usuario demo temporal...")
+
+            # Crear una clase simple para usuario demo
+            class DemoUser:
+                def __init__(self):
+                    self.id = 999
+                    self.nombre = "Usuario"
+                    self.apellido = "Demo"
+                    self.email = "demo@alfaia.com"
+                    self.nivel_inicial = "Principiante"
+
+            demo_user = DemoUser()
+            print(f"✅ Usuario demo creado: {demo_user.nombre} {demo_user.apellido}")
+            return demo_user
+
+        except Exception as e:
+            print(f"❌ Error creando usuario demo: {e}")
+            return None
 
     def show_login_window(self):
         """Mostrar ventana de login"""
@@ -139,7 +211,8 @@ class AlfaIAApplication:
             self.login_window = LoginWindow()
             print("🏗️  LoginWindow creado")
 
-            self.login_window.login_successful.connect(self.show_main_window)
+            # Conectar señal de login exitoso
+            self.login_window.login_successful.connect(self.on_login_success)
             print("🔗 Señales conectadas")
 
             self.login_window.show()
@@ -150,8 +223,18 @@ class AlfaIAApplication:
         except Exception as e:
             self.logger.error(f"Error creando ventana de login: {e}")
             print(f"❌ Error creando ventana de login: {e}")
+            import traceback
+            traceback.print_exc()
             QMessageBox.critical(None, "Error", f"No se pudo crear la ventana de login: {str(e)}")
             return False
+
+    def on_login_success(self):
+        """Manejar login exitoso con delay para asegurar que el usuario esté en auth_manager"""
+        print("🎉 Login exitoso detectado!")
+
+        # Pequeño delay para asegurar que el usuario esté guardado en auth_manager
+        from PyQt6.QtCore import QTimer
+        QTimer.singleShot(500, self.show_main_window)  # 500ms delay
 
     def run(self) -> int:
         """Ejecutar la aplicación principal"""
