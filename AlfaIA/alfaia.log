@@ -110,3 +110,82 @@
 2025-06-21 23:10:19,952 - __main__ - INFO - Base de datos inicializada
 2025-06-21 23:10:20,106 - __main__ - INFO - Ventana de login mostrada
 2025-06-21 23:10:20,106 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:11:38,202 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:11:38,299 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:11:38,299 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:11:38,299 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:11:38,850 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:11:38,867 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:11:38,869 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:11:38,875 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:11:38,877 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:11:38,879 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:11:38,890 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:11:39,040 - __main__ - INFO - Ventana de login mostrada
+2025-06-22 10:11:39,040 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:12:52,713 - __main__ - INFO - Recursos limpiados
+2025-06-22 10:22:56,211 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:22:56,313 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:22:56,313 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:22:56,313 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:22:56,869 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:22:56,872 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:22:56,874 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:22:56,875 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:22:56,877 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:22:56,878 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:22:56,887 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:22:57,044 - __main__ - INFO - Ventana de login mostrada
+2025-06-22 10:22:57,045 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:30:08,166 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:30:08,252 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:30:08,252 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:30:08,252 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:30:08,822 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:30:08,825 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:30:08,827 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:30:08,829 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:30:08,831 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:30:08,832 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:30:08,840 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:30:08,986 - __main__ - INFO - Ventana de login mostrada
+2025-06-22 10:30:08,986 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:30:36,216 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:30:36,301 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:30:36,301 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:30:36,302 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:30:36,828 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:30:36,831 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:30:36,833 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:30:36,834 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:30:36,836 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:30:36,837 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:30:36,845 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:30:37,012 - __main__ - INFO - Ventana de login mostrada
+2025-06-22 10:30:37,012 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:33:23,221 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:33:23,297 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:33:23,298 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:33:23,298 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:33:23,839 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:33:23,843 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:33:23,845 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:33:23,847 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:33:23,849 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:33:23,851 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:33:23,861 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:33:24,015 - __main__ - INFO - Ventana de login mostrada
+2025-06-22 10:33:24,016 - __main__ - INFO - AlfaIA iniciado exitosamente
+2025-06-22 10:34:51,783 - __main__ - INFO - Aplicación PyQt6 inicializada
+2025-06-22 10:34:51,858 - mysql.connector - INFO - package: mysql.connector.plugins
+2025-06-22 10:34:51,858 - mysql.connector - INFO - plugin_name: caching_sha2_password
+2025-06-22 10:34:51,858 - mysql.connector - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-06-22 10:34:52,417 - core.database.connection - INFO - Pool de conexiones creado exitosamente
+2025-06-22 10:34:52,421 - core.database.connection - INFO - Tabla usuarios creada/verificada exitosamente
+2025-06-22 10:34:52,423 - core.database.connection - INFO - Tabla perfiles_usuario creada/verificada exitosamente
+2025-06-22 10:34:52,425 - core.database.connection - INFO - Tabla categorias creada/verificada exitosamente
+2025-06-22 10:34:52,426 - core.database.connection - INFO - Tabla ejercicios creada/verificada exitosamente
+2025-06-22 10:34:52,428 - core.database.connection - INFO - Tabla resultados_ejercicios creada/verificada exitosamente
+2025-06-22 10:34:52,437 - __main__ - INFO - Base de datos inicializada
+2025-06-22 10:34:52,486 - __main__ - ERROR - Error creando ventana de login: 'AlfaIAApplication' object has no attribute 'on_login_success'
+2025-06-22 10:34:53,784 - __main__ - INFO - Recursos limpiados

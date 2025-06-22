@@ -14,6 +14,8 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt, QDate, QThread, pyqtSignal, QTimer, QSize, QPropertyAnimation, QEasingCurve
 from PyQt6.QtGui import QFont, QPixmap, QPalette, QColor, QPainter, QBrush, QLinearGradient, QScreen
 
+from AlfaIA.core.auth.authentication import get_auth_manager
+
 # Agregar path para imports
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
@@ -21,6 +23,7 @@ try:
     from config.settings import Settings
     from core.auth.authentication import AuthenticationManager
     from core.database.models import NivelUsuario
+
 except ImportError as e:
     print(f"Error importando dependencias: {e}")
 
@@ -72,8 +75,8 @@ class ResponsiveFrame(QFrame):
 
 
 class AuthWorker(QThread):
-    """Worker thread para operaciones de autenticación"""
-    auth_completed = pyqtSignal(bool, str)
+    """Worker thread para operaciones de autenticación - SIN DEADLOCK"""
+    auth_completed = pyqtSignal(bool, str, object)
 
     def __init__(self, operation, **kwargs):
         super().__init__()
@@ -81,25 +84,60 @@ class AuthWorker(QThread):
         self.kwargs = kwargs
 
     def run(self):
-        """Ejecutar operación de autenticación"""
+        """Ejecutar operación de autenticación - VERSIÓN SIN DEADLOCK"""
         try:
-            from core.auth.authentication import AuthenticationManager
-            auth_manager = AuthenticationManager()
+            from core.auth.authentication import get_auth_manager
+
+            auth_manager = get_auth_manager()
+
+            print(f"🔧 AuthWorker ejecutando operación: {self.operation}")
+            print(f"🔍 AuthManager ID en worker: {id(auth_manager)}")
 
             if self.operation == "login":
                 success, message = auth_manager.login(
                     self.kwargs['email'],
                     self.kwargs['password']
                 )
+
+                # Si el login fue exitoso, obtener el usuario de forma segura
+                user = None
+                if success:
+                    print("✅ Login exitoso en AuthWorker, obteniendo usuario...")
+
+                    # DEBUG sin lock para evitar deadlock
+                    auth_manager.debug_status_no_lock()
+
+                    # Usar método seguro para obtener usuario
+                    user = auth_manager.get_current_user_safe()
+
+                    if user:
+                        print(f"✅ Usuario obtenido en AuthWorker: {user.email}")
+                    else:
+                        print("⚠️ Usuario no obtenido, pero login exitoso")
+                        # Intentar una vez más después de un pequeño delay
+                        import time
+                        time.sleep(0.1)
+                        user = auth_manager.get_current_user_safe()
+                        if user:
+                            print(f"✅ Usuario obtenido en segundo intento: {user.email}")
+
+                print(f"🎯 Emitiendo señal: success={success}, user={'Sí' if user else 'No'}")
+                self.auth_completed.emit(success, message, user)
+
             elif self.operation == "register":
                 success, message = auth_manager.register_user(**self.kwargs)
+                self.auth_completed.emit(success, message, None)
             else:
-                success, message = False, "Operación no válida"
-
-            self.auth_completed.emit(success, message)
+                self.auth_completed.emit(False, "Operación no válida", None)
 
         except Exception as e:
-            self.auth_completed.emit(False, f"Error: {str(e)}")
+            print(f"❌ Error en AuthWorker: {e}")
+            import traceback
+            traceback.print_exc()
+            self.auth_completed.emit(False, f"Error: {str(e)}", None)
+
+        finally:
+            print("🏁 AuthWorker terminado")
 
 
 class LoginForm(QWidget):
@@ -1003,7 +1041,7 @@ class RegisterForm(QWidget):
 
 
 class LoginWindow(QWidget):
-    """Ventana principal de login - FIX DEFINITIVO FULLSCREEN"""
+    """Ventana principal de login - TAMAÑO COMPLETO IGUAL AL MAIN WINDOW"""
     login_successful = pyqtSignal()
 
     def __init__(self):
@@ -1011,102 +1049,91 @@ class LoginWindow(QWidget):
         self.settings = Settings()
         self.is_fullscreen_ready = False
         self.setup_ui()
-        # FIX DEFINITIVO: Configurar fullscreen de manera robusta
-        self.configure_fullscreen_fix()
+        # CONFIGURAR MISMO TAMAÑO QUE MAIN WINDOW
+        self.configure_fullscreen_like_main()
 
-    def configure_fullscreen_fix(self):
-        """FIX DEFINITIVO para problemas de fullscreen"""
-        print("🔧 Configurando fix de fullscreen...")
+    def configure_fullscreen_like_main(self):
+        """Configurar login window del mismo tamaño que main window"""
+        print("🔧 Configurando login window a tamaño completo...")
 
-        # Paso 1: Obtener geometría de pantalla ANTES de mostrar
+        # Paso 1: Obtener geometría de pantalla
         screen = QApplication.primaryScreen()
         if screen:
             screen_geometry = screen.availableGeometry()
             print(f"📐 Resolución detectada: {screen_geometry.width()}x{screen_geometry.height()}")
 
-            # Establecer tamaño mínimo basado en la pantalla
-            min_width = max(1024, int(screen_geometry.width() * 0.8))
-            min_height = max(768, int(screen_geometry.height() * 0.8))
-            self.setMinimumSize(min_width, min_height)
+            # Establecer tamaño mínimo igual al main window (1200x800)
+            self.setMinimumSize(1200, 800)
 
             # Establecer tamaño inicial EXACTO de la pantalla
             self.resize(screen_geometry.width(), screen_geometry.height())
 
-            # Mover a posición (0,0) para asegurar cobertura completa
+            # Mover a posición (0,0) para cobertura completa
             self.move(screen_geometry.x(), screen_geometry.y())
 
-        # Paso 2: Configurar propiedades de ventana ANTES de mostrar
-        self.setWindowState(Qt.WindowState.WindowNoState)  # Resetear estado
+        # Paso 2: Configurar propiedades de ventana
+        self.setWindowState(Qt.WindowState.WindowNoState)
 
-        # Paso 3: Programar secuencia de fullscreen con delays específicos
-        QTimer.singleShot(50, self.prepare_fullscreen)  # Preparar
-        QTimer.singleShot(150, self.apply_fullscreen)  # Aplicar
-        QTimer.singleShot(300, self.verify_fullscreen)  # Verificar
+        # Paso 3: Programar secuencia para tamaño completo
+        QTimer.singleShot(50, self.prepare_fullsize)
+        QTimer.singleShot(150, self.apply_fullsize)
+        QTimer.singleShot(300, self.verify_fullsize)
 
-    def prepare_fullscreen(self):
-        """Paso 1: Preparar para fullscreen"""
-        print("📋 Preparando fullscreen...")
-        # Asegurar que el widget está completamente renderizado
-        self.show()  # Mostrar primero en modo normal
+    def prepare_fullsize(self):
+        """Paso 1: Preparar para tamaño completo"""
+        print("📋 Preparando login para tamaño completo...")
+        self.show()
         self.activateWindow()
         self.raise_()
 
-    def apply_fullscreen(self):
-        """Paso 2: Aplicar fullscreen"""
-        print("🖥️  Aplicando fullscreen...")
-        # Método más compatible que showMaximized()
+    def apply_fullsize(self):
+        """Paso 2: Aplicar tamaño completo"""
+        print("🖥️ Aplicando tamaño completo al login...")
+        # Maximizar como el main window
         self.setWindowState(Qt.WindowState.WindowMaximized)
-
-        # Forzar repaint
         self.repaint()
         QApplication.processEvents()
 
-    def verify_fullscreen(self):
-        """Paso 3: Verificar y corregir si es necesario"""
-        print("✅ Verificando fullscreen...")
+    def verify_fullsize(self):
+        """Paso 3: Verificar tamaño completo"""
+        print("✅ Verificando tamaño completo del login...")
 
-        # Verificar que realmente está en fullscreen
         screen = QApplication.primaryScreen()
         if screen:
             screen_geometry = screen.availableGeometry()
             current_geometry = self.geometry()
 
             print(f"🎯 Pantalla: {screen_geometry.width()}x{screen_geometry.height()}")
-            print(f"🎯 Ventana: {current_geometry.width()}x{current_geometry.height()}")
+            print(f"🎯 Login Window: {current_geometry.width()}x{current_geometry.height()}")
 
             # Si no coincide, forzar tamaño correcto
-            tolerance = 50  # Tolerancia para barras de sistema
+            tolerance = 50
             if (abs(current_geometry.width() - screen_geometry.width()) > tolerance or
                     abs(current_geometry.height() - screen_geometry.height()) > tolerance):
-                print("⚠️  Corrigiendo tamaño de ventana...")
+                print("⚠️ Corrigiendo tamaño del login window...")
                 self.setGeometry(screen_geometry)
 
-        # Marcar como listo y forzar actualización final
         self.is_fullscreen_ready = True
         self.force_layout_refresh()
-        print("🎉 Fullscreen configurado correctamente!")
+        print("🎉 Login window configurado a tamaño completo!")
 
     def force_layout_refresh(self):
-        """Forzar actualización completa del layout"""
-        print("🔄 Refrescando layouts...")
+        """Forzar actualización del layout"""
+        print("🔄 Refrescando layouts del login...")
 
-        # Forzar recálculo de todos los layouts
         if hasattr(self, 'stack'):
             current_widget = self.stack.currentWidget()
             if current_widget:
                 current_widget.adjustSize()
                 current_widget.updateGeometry()
 
-        # Actualizar widget principal
         self.adjustSize()
         self.updateGeometry()
         self.update()
-
-        # Procesar eventos pendientes
         QApplication.processEvents()
 
     def setup_ui(self):
-        """Configurar interfaz principal"""
+        """Configurar interfaz principal - SIN CAMBIOS"""
         self.setWindowTitle("AlfaIA - Sistema de Autenticación")
 
         # Layout principal

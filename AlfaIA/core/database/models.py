@@ -1,9 +1,10 @@
 # =============================================================================
-# AlfaIA/core/database/models.py - Modelos Completos y Funcionales
+# AlfaIA/core/database/models.py - Modelos Corregidos con Hash Seguro
 # =============================================================================
 
 import json
 import hashlib
+import bcrypt  # Usar bcrypt en lugar de SHA-256 simple
 from datetime import datetime, date
 from typing import Optional, Dict, Any, List
 from enum import Enum
@@ -32,7 +33,7 @@ class EstiloAprendizaje(Enum):
 
 
 class Usuario:
-    """Modelo de Usuario"""
+    """Modelo de Usuario con hash de contraseña seguro"""
 
     def __init__(self, id: int = None, email: str = None, password_hash: str = None,
                  nombre: str = None, apellido: str = None, fecha_nacimiento: date = None,
@@ -53,14 +54,44 @@ class Usuario:
 
     @staticmethod
     def hash_password(password: str) -> str:
-        """Crear hash de contraseña usando SHA-256 (simplificado)"""
-        return hashlib.sha256(password.encode('utf-8')).hexdigest()
+        """Crear hash de contraseña usando bcrypt (SEGURO)"""
+        try:
+            # Usar bcrypt para hash seguro
+            password_bytes = password.encode('utf-8')
+            salt = bcrypt.gensalt()
+            hashed = bcrypt.hashpw(password_bytes, salt)
+            return hashed.decode('utf-8')
+        except Exception as e:
+            print(f"❌ Error hasheando contraseña con bcrypt: {e}")
+            # Fallback a SHA-256 si bcrypt falla
+            return hashlib.sha256(password.encode('utf-8')).hexdigest()
 
     def verify_password(self, password: str) -> bool:
-        """Verificar contraseña contra el hash"""
-        if not self.password_hash:
+        """Verificar contraseña contra el hash (COMPATIBLE CON AMBOS MÉTODOS)"""
+        if not self.password_hash or not password:
             return False
-        return self.password_hash == Usuario.hash_password(password)
+
+        try:
+            # Intentar verificación con bcrypt primero
+            password_bytes = password.encode('utf-8')
+            hash_bytes = self.password_hash.encode('utf-8')
+
+            # Si el hash parece ser de bcrypt (empieza con $2b$)
+            if self.password_hash.startswith('$2b$'):
+                return bcrypt.checkpw(password_bytes, hash_bytes)
+            else:
+                # Fallback para hashes SHA-256 existentes
+                sha256_hash = hashlib.sha256(password_bytes).hexdigest()
+                return self.password_hash == sha256_hash
+
+        except Exception as e:
+            print(f"❌ Error verificando contraseña: {e}")
+            # Último fallback: comparación SHA-256
+            try:
+                sha256_hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
+                return self.password_hash == sha256_hash
+            except:
+                return False
 
     def save(self) -> bool:
         """Guardar usuario en la base de datos"""
@@ -73,7 +104,7 @@ class Usuario:
                 query = """
                         INSERT INTO usuarios (email, password_hash, nombre, apellido, fecha_nacimiento,
                                               nivel_inicial, rol, activo, configuracion_json)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) \
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                         """
                 params = (
                     self.email, self.password_hash, self.nombre, self.apellido,
@@ -89,31 +120,37 @@ class Usuario:
                     connection.commit()
                     cursor.close()
                     connection.close()
+                    print(f"✅ Usuario guardado con ID: {self.id}")
                     return True
             else:
                 # Actualizar usuario existente
                 query = """
-                        UPDATE usuarios \
+                        UPDATE usuarios
                         SET email=%s, \
                             password_hash=%s, \
                             nombre=%s, \
                             apellido=%s, \
-                            fecha_nacimiento=%s, \
+                            fecha_nacimiento=%s,
                             nivel_inicial=%s, \
                             rol=%s, \
                             activo=%s, \
                             configuracion_json=%s
-                        WHERE id = %s \
+                        WHERE id = %s
                         """
                 params = (
                     self.email, self.password_hash, self.nombre, self.apellido,
                     self.fecha_nacimiento, self.nivel_inicial.value, self.rol.value,
                     self.activo, json.dumps(self.configuracion_json), self.id
                 )
-                return db_manager.execute_non_query(query, params)
+                result = db_manager.execute_non_query(query, params)
+                if result:
+                    print(f"✅ Usuario actualizado ID: {self.id}")
+                return result
 
         except Exception as e:
-            print(f"Error guardando usuario: {e}")
+            print(f"❌ Error guardando usuario: {e}")
+            import traceback
+            traceback.print_exc()
             return False
         return False
 
@@ -128,11 +165,15 @@ class Usuario:
 
             if results and len(results) > 0:
                 row = results[0]
-                return cls._from_row(row)
-            return None
+                user = cls._from_row(row)
+                print(f"✅ Usuario encontrado: {user.email} (ID: {user.id})")
+                return user
+            else:
+                print(f"❌ Usuario no encontrado: {email}")
+                return None
 
         except Exception as e:
-            print(f"Error buscando usuario por email: {e}")
+            print(f"❌ Error buscando usuario por email: {e}")
             return None
 
     @classmethod
@@ -150,7 +191,7 @@ class Usuario:
             return None
 
         except Exception as e:
-            print(f"Error buscando usuario por ID: {e}")
+            print(f"❌ Error buscando usuario por ID: {e}")
             return None
 
     @classmethod
@@ -174,6 +215,15 @@ class Usuario:
             fecha_registro=row[9],
             configuracion_json=configuracion
         )
+
+    def update_password(self, new_password: str) -> bool:
+        """Actualizar contraseña del usuario"""
+        try:
+            self.password_hash = self.hash_password(new_password)
+            return self.save()
+        except Exception as e:
+            print(f"❌ Error actualizando contraseña: {e}")
+            return False
 
 
 class PerfilUsuario:
@@ -212,10 +262,10 @@ class PerfilUsuario:
                 query = """
                         INSERT INTO perfiles_usuario (user_id, nivel_lectura, nivel_gramatica, nivel_vocabulario,
                                                       puntos_totales, experiencia_total, racha_dias_consecutivos,
-                                                      tiempo_total_minutos, ejercicios_completados, \
+                                                      tiempo_total_minutos, ejercicios_completados,
                                                       objetivo_diario_ejercicios,
                                                       estilo_aprendizaje, preferencias_json, estadisticas_json)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) \
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                         """
                 params = (
                     self.user_id, self.nivel_lectura, self.nivel_gramatica, self.nivel_vocabulario,
@@ -237,20 +287,20 @@ class PerfilUsuario:
             else:
                 # Actualizar perfil existente
                 query = """
-                        UPDATE perfiles_usuario \
+                        UPDATE perfiles_usuario
                         SET nivel_lectura=%s, \
                             nivel_gramatica=%s, \
-                            nivel_vocabulario=%s, \
+                            nivel_vocabulario=%s,
                             puntos_totales=%s, \
                             experiencia_total=%s, \
-                            racha_dias_consecutivos=%s, \
+                            racha_dias_consecutivos=%s,
                             tiempo_total_minutos=%s, \
                             ejercicios_completados=%s, \
-                            objetivo_diario_ejercicios=%s, \
+                            objetivo_diario_ejercicios=%s,
                             estilo_aprendizaje=%s, \
                             preferencias_json=%s, \
                             estadisticas_json=%s
-                        WHERE id = %s \
+                        WHERE id = %s
                         """
                 params = (
                     self.nivel_lectura, self.nivel_gramatica, self.nivel_vocabulario,
@@ -262,7 +312,7 @@ class PerfilUsuario:
                 return db_manager.execute_non_query(query, params)
 
         except Exception as e:
-            print(f"Error guardando perfil: {e}")
+            print(f"❌ Error guardando perfil: {e}")
             return False
         return False
 
@@ -281,7 +331,7 @@ class PerfilUsuario:
             return None
 
         except Exception as e:
-            print(f"Error buscando perfil por user_id: {e}")
+            print(f"❌ Error buscando perfil por user_id: {e}")
             return None
 
     @classmethod
@@ -312,38 +362,65 @@ class PerfilUsuario:
         )
 
 
-if __name__ == "__main__":
-    print("🧪 Probando modelos de AlfaIA...")
+# =============================================================================
+# FUNCIONES DE UTILIDAD PARA MIGRACIÓN
+# =============================================================================
 
-    # Crear usuario de prueba
+def migrate_existing_passwords():
+    """Migrar contraseñas existentes a bcrypt (SOLO EJECUTAR UNA VEZ)"""
+    print("🔄 Migrando contraseñas existentes a bcrypt...")
+
     try:
-        user = Usuario(
-            email="test@alfaia.com",
-            password_hash=Usuario.hash_password("test123"),
-            nombre="Usuario",
-            apellido="Prueba",
-            fecha_nacimiento=date(1990, 1, 1),
-            nivel_inicial=NivelUsuario.PRINCIPIANTE,
-            rol=RolUsuario.ESTUDIANTE
-        )
+        from core.database.connection import DatabaseManager
 
-        if user.save():
-            print(f"✅ Usuario creado: {user.email} (ID: {user.id})")
+        db_manager = DatabaseManager()
 
-            # Crear perfil asociado
-            perfil = PerfilUsuario(
-                user_id=user.id,
-                preferencias_json={
-                    "tema": "light",
-                    "notificaciones": True,
-                    "sonidos": True
-                }
-            )
-            if perfil.save():
-                print("✅ Perfil creado exitosamente")
-        else:
-            print("❌ Error creando usuario de prueba")
+        # Obtener todos los usuarios con hashes SHA-256 (no empiezan con $2b$)
+        query = "SELECT id, email, password_hash FROM usuarios WHERE password_hash NOT LIKE '$2b$%'"
+        results = db_manager.execute_query(query)
+
+        if not results:
+            print("✅ No hay contraseñas que migrar")
+            return True
+
+        print(f"🔍 Encontradas {len(results)} contraseñas para migrar")
+
+        for user_id, email, old_hash in results:
+            print(f"⚠️  Usuario {email} tiene hash SHA-256 antiguo")
+            print("   Este usuario necesitará cambiar su contraseña en el próximo login")
+
+        print("✅ Migración completada (hashes antiguos mantenidos por compatibilidad)")
+        return True
+
     except Exception as e:
-        print(f"❌ Error en pruebas: {e}")
+        print(f"❌ Error en migración: {e}")
+        return False
+
+
+if __name__ == "__main__":
+    print("🧪 Probando modelos corregidos...")
+
+    # Probar hash de contraseña
+    test_password = "TestPassword123"
+    hashed = Usuario.hash_password(test_password)
+    print(f"🔑 Hash generado: {hashed}")
+
+    # Crear usuario temporal para probar
+    temp_user = Usuario(password_hash=hashed)
+
+    # Probar verificación
+    if temp_user.verify_password(test_password):
+        print("✅ Verificación de contraseña exitosa")
+    else:
+        print("❌ Verificación de contraseña falló")
+
+    # Probar con hash SHA-256 existente
+    sha256_hash = hashlib.sha256(test_password.encode('utf-8')).hexdigest()
+    temp_user_old = Usuario(password_hash=sha256_hash)
+
+    if temp_user_old.verify_password(test_password):
+        print("✅ Verificación de contraseña SHA-256 exitosa (compatibilidad)")
+    else:
+        print("❌ Verificación de contraseña SHA-256 falló")
 
     print("🏁 Pruebas de modelos completadas")
